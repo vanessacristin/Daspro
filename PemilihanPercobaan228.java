@@ -2,19 +2,50 @@ import java.util.Scanner;
 public class PemilihanPercobaan228 {
     public static void main(String [] args) {
         Scanner input28 = new Scanner(System.in);
-        System.out.print("Nilai uas     : ");
+        String nilaiHuruf = "", kualifikasi = "";
+        double nilaiSetara = 0;
+
+        System.out.println("Nilai uas     : ");
         float uas = input28.nextFloat();
-        System.out.print("Nilai uts     : ");
+        System.out.println("Nilai uts     : ");
         float uts = input28.nextFloat();
-        System.out.print("Nilai kuis    : ");
+        System.out.println("Nilai kuis    : ");
         float kuis = input28.nextFloat();
-        System.out.print("Nilai tugas   : ");
+        System.out.println("Nilai tugas   : ");
         float tugas = input28.nextFloat();
 
-        float total = (uas * 0.4F) + (uts * 0.3F) + (kuis * 0.1F) + (tugas * 0.2F);
-        String message = total < 65 ? "Remidi" : "Tidak remidi";
-        System.out.println("Nilai akhir = " + total + " sehingga " + message);
-
-
+        double total = (uas * 0.4F) + (uts * 0.3F) + (kuis * 0.1F) + (tugas * 0.2F);
+        if (80< total && total<=100) {
+            nilaiHuruf = "A";
+            nilaiSetara = 4;
+            kualifikasi = "Sangat baik";
+        } else if (73 < total && total <= 80) {
+            nilaiHuruf = "B+";
+            nilaiSetara = 3.5;
+            kualifikasi = "Lebih dari baik";
+        } else if (65 < total && total <= 73) {
+            nilaiHuruf = "B";
+            nilaiSetara = 3;
+            kualifikasi = "Cukup";
+        } else if (60 < total && total <= 65) {
+            nilaiHuruf = "C+";
+            nilaiSetara = 2.5;
+            kualifikasi = "Lebih dari cukup";
+        } else if (50 < total && total <= 60) {
+            nilaiHuruf = "C";
+            nilaiSetara = 2;
+            kualifikasi = "Cukup";
+        } else if (39 < total && total <= 50) {
+            nilaiHuruf = "D";
+            nilaiSetara = 1;
+            kualifikasi = "Kurang";
+        } else if (total <= 39) {
+            nilaiHuruf = "E";
+            nilaiSetara = 0;
+            kualifikasi = "Gagal";
+    }
+            System.out.println("Nilai akhir = " + total);
+            System.out.println( "Nilai huruf = " + nilaiHuruf);
+            System.out.println( "Nilai setara = " + kualifikasi);
     }
 }
